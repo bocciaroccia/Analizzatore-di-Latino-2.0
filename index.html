@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Analizzatore di Latino</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <h1>Analizzatore di Latino</h1>
+
+    <section class="card">
+      <h2>Cerca Versione</h2>
+      
+      <!-- Opzione 1: Caricamento Foto -->
+      <label for="fotoVersione"><b>Scatta o carica la foto della versione:</b></label>
+      <input type="file" id="fotoVersione" accept="image/*">
+
+      <hr style="margin: 15px 0; border: 0; border-top: 1px solid #ccc;">
+
+      <!-- Opzione 2: Dati Manuali -->
+      <input type="text" id="titoloLibro" placeholder="Titolo del libro di testo (opzionale)">
+      <input type="text" id="isbn" placeholder="Codice ISBN del libro (opzionale)">
+      <input type="text" id="titolo" placeholder="Titolo della versione (opzionale)">
+      <input type="text" id="incipit" placeholder="Prime parole latino (opzionale se carichi la foto)">
+      
+      <button id="btn-analizza" onclick="analizzaVersione()">Analizza Versione</button>
+    </section>
+
+    <section id="risultati" class="card hidden">
+      <h2>Risultati Analisi</h2>
+      <div id="output-analisi"></div>
+    </section>
+
+    <section class="card">
+      <h2>Tutor IA (Dubbi e Domande)</h2>
+      <div id="chat-box" class="chat-box"></div>
+      <div class="chat-input-row">
+        <input type="text" id="chat-input" placeholder="Chiedi spiegazioni...">
+        <button onclick="inviaDomandaChat()">Invia</button>
+      </div>
+    </section>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+  </html>
